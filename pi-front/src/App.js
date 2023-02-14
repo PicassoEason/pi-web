@@ -39,13 +39,20 @@ class App extends React.Component {
 		// 			DataisLoaded: true
 		// 		});
 		// 	})
+		// Promise.all([fetch('http://localhost:5001/min'),fetch('http://localhost:5001/date')])
+		// 	.then(([res1,res2]) => {
+		// 		this.setState({
+		// 			items: json,
+		// 			DataisLoaded: true
+		// 		});
+		// 	})
 	}
 	render() {
 		const { DataisLoaded, items } = this.state;
 		if (!DataisLoaded) return 
 			<div>
 				<h1> no no conmou </h1> 
-			</div> ;
+			</div>  ;
 		// const sort = items.sort(sortData)
 		return [
 			<div className = "App"  >

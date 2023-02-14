@@ -10,6 +10,7 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-const pi = db.collection("pi2");
-module.exports = pi;
+const min = db.collection("Min");
+// const date = db.collection("Date");
+module.exports = min;
  

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const pi = require("./config");
+const min = require("./config");
+// const date = require("./config");
 // const { query } = require("express");
 const app = express();
 app.use(express.json());
@@ -11,7 +12,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/min", async (req, res) => {
-    const snapshot = await pi.orderBy('time','desc').limit(5).get();
+    const snapshot = await min.orderBy('time','desc').limit(5).get();
     const list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     //反轉日期
     list.reverse()
@@ -19,7 +20,7 @@ app.get("/min", async (req, res) => {
 });
 
 app.get("/date", async (req, res) => {
-    const snapshot = await pi.orderBy('date','desc').limit(5).get();
+    const snapshot = await date.orderBy('date','desc').limit(5).get();
     const list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     //反轉日期
     res.send(list);
